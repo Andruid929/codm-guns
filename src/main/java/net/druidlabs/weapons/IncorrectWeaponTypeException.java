@@ -1,33 +1,29 @@
 package net.druidlabs.weapons;
 
-class IncorrectWeaponTypeException extends RuntimeException {
+public class IncorrectWeaponTypeException extends RuntimeException {
 
     private String gunClass;
     private WeaponAttr weaponAttr;
 
-    IncorrectWeaponTypeException() {
+    public IncorrectWeaponTypeException() {
         super();
     }
 
-    IncorrectWeaponTypeException(String message) {
+    public IncorrectWeaponTypeException(String message) {
         super(message);
     }
 
-    IncorrectWeaponTypeException(String message, Throwable cause) {
+    public IncorrectWeaponTypeException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    IncorrectWeaponTypeException(Throwable cause) {
+    public IncorrectWeaponTypeException(Throwable cause) {
         super(cause);
     }
 
-    IncorrectWeaponTypeException(String gunClass, WeaponAttr weaponAttr) {
+    public IncorrectWeaponTypeException(String gunClass, WeaponAttr weaponAttr) {
         this.gunClass = gunClass;
         this.weaponAttr = weaponAttr;
-    }
-
-    protected IncorrectWeaponTypeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
     }
 
     @Override

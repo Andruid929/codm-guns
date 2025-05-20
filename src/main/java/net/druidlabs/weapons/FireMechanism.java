@@ -1,6 +1,6 @@
 package net.druidlabs.weapons;
 
-enum FireMechanism {
+public enum FireMechanism {
 
     FULL_AUTO("Full auto"),
     SEMI_AUTO("Semi auto"),

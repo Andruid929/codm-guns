@@ -13,6 +13,10 @@ public class NotMasteredException extends NullPointerException {
 
     private final Weapon weapon;
 
+    /**
+     * @param weapon the weapon that is not mastered.
+     * */
+
     public NotMasteredException(Weapon weapon) {
         this.weapon = weapon;
     }

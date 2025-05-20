@@ -2,7 +2,7 @@ package net.druidlabs.weapons;
 
 import net.druidlabs.weapons.annotations.Shotty;
 
-interface WeaponAttr {
+public interface WeaponAttr {
 
     String getName();
 
