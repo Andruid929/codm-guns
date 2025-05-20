@@ -1,5 +1,6 @@
 package net.druidlabs.weapons;
 
+import net.druidlabs.weapons.mastery.MasteryCollection;
 import net.druidlabs.weapons.mastery.NoMasterySystemException;
 import net.druidlabs.weapons.primary.*;
 import net.druidlabs.weapons.secondary.Launcher;
@@ -90,7 +91,7 @@ public abstract class Weapon {
         if (masteryName != null) {
             return masteryName;
         }
-        return "Not mastered";
+        return MasteryCollection.NOT_MASTERED;
     }
 
     /**
