@@ -5,6 +5,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Annotation for all the weapons that are secondary weapons
+ *
+ * @since 1.0
+ * @version 1.0
+ * @author Andrew Jones
+ * */
+
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
 public @interface SecondaryWeapon {

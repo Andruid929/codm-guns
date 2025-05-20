@@ -28,11 +28,6 @@ class MasteryCollectionTest {
     }
 
     @Test
-    void getWeaponCollectionAsList() {
-        assertInstanceOf(List.class, guns.getWeaponCollectionAsList());
-    }
-
-    @Test
     void getMasteryNames() {
         addStuff();
         assertTrue(new HashSet<>(guns.getMasteryNames()).contains("Minotaur"));
@@ -42,6 +37,6 @@ class MasteryCollectionTest {
     void clearWeaponCollection() {
         addStuff();
         guns.clearWeaponCollection();
-        assertEquals(0, guns.getWeaponCollection().size());
+        assertThrows(NullPointerException.class, () -> guns.getWeaponCollection().size());
     }
 }

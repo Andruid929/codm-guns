@@ -1,32 +1,42 @@
 package net.druidlabs.weapons.secondary;
 
 import net.druidlabs.weapons.IncorrectWeaponTypeException;
-import net.druidlabs.weapons.mastery.NoMasterySystemException;
 import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponSecondary;
 import net.druidlabs.weapons.annotations.Pistola;
+import net.druidlabs.weapons.mastery.NoMasterySystemException;
+
+/**
+ * The class for a {@code Pistol}.
+ *
+ * @since 1.0
+ * @version 2.0
+ * @author Andrew Jones
+ * */
 
 public class Pistol extends Weapon {
 
     private final WeaponSecondary weapon;
+    private final String gunClass = "Pistol";
+
+    /**
+     * Get an object of this class that holds the data of the given weapon.
+     *
+     * @param weapon the name of the pistol. Must be a {@link WeaponSecondary} annotated with {@link Pistola}.
+     * @throws IncorrectWeaponTypeException if the weapon passed in is not a pistol.
+     * @since 1.0
+     * */
 
     public Pistol(@Pistola WeaponSecondary weapon) {
         super(weapon);
         this.weapon = weapon;
 
-        try {
-            if (!weapon.getClass().getField(weapon.name()).isAnnotationPresent(Pistola.class)) {
-                String GUN_CLASS = "Pistol";
-                throw new IncorrectWeaponTypeException(GUN_CLASS, weapon);
-            }
-        } catch (NoSuchFieldException e) {
-            System.err.println(e.getMessage());
-        }
+        checkSecondaryWeaponAnnotation(weapon, Pistola.class, gunClass);
     }
 
     @Override
     public void setMasteryName(String masteryName) {
-
+        throw new NoMasterySystemException();
     }
 
     @Override
@@ -41,5 +51,10 @@ public class Pistol extends Weapon {
         }
 
         return String.valueOf(weapon.getBaseDamage());
+    }
+
+    @Override
+    public String getGunClass() {
+        return gunClass;
     }
 }

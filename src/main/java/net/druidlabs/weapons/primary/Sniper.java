@@ -5,19 +5,34 @@ import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponPrimary;
 import net.druidlabs.weapons.annotations.Snipes;
 
+/**
+ * The class for a {@code Sniper Rifle}.
+ *
+ * @since 1.0
+ * @version 2.0
+ * @author Andrew Jones
+ * */
+
 public class Sniper extends Weapon {
 
     private final String gunClass = "Sniper";
 
+    /**
+     * Get an object of this class that holds the data of the given weapon.
+     *
+     * @param weaponName the name of the sniper rifle. Must be a {@link WeaponPrimary} annotated with {@link Snipes}.
+     * @throws IncorrectWeaponTypeException if the weapon passed in is not a sniper.
+     * @since 1.0
+     * */
+
     public Sniper(@Snipes WeaponPrimary weaponName) {
         super(weaponName);
 
-        try {
-            if (!weaponName.getClass().getField(weaponName.name()).isAnnotationPresent(Snipes.class)) {
-                throw new IncorrectWeaponTypeException(gunClass, weaponName);
-            }
-        } catch (NoSuchFieldException e) {
-            System.err.println(e.getMessage());
-        }
+        checkPrimaryWeaponAnnotation(weaponName, Snipes.class, gunClass);
+    }
+
+    @Override
+    public String getGunClass() {
+        return gunClass;
     }
 }

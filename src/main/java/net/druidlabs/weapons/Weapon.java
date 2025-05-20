@@ -8,6 +8,8 @@ import net.druidlabs.weapons.secondary.Melee;
 import net.druidlabs.weapons.secondary.Pistol;
 import net.druidlabs.weapons.secondary.SecondaryWeapon;
 
+import java.lang.annotation.Annotation;
+
 /**
  * Class that provides access to the information of each weapon in Call of Duty:Mobile.
  * <p>
@@ -163,6 +165,28 @@ public abstract class Weapon {
                 + ", Control: " + getControl()
                 + ", Mobility: " + getMobility()
                 + ", Fire mode: " + getFireMechanism() + "\n";
+    }
+
+    public abstract String getGunClass();
+
+    protected void checkPrimaryWeaponAnnotation(@PrimaryWeapon WeaponPrimary weaponName, Class<? extends Annotation> weaponClass, String gunClass) {
+        try {
+            if (!weaponName.getClass().getField(weaponName.name()).isAnnotationPresent(weaponClass)) {
+                throw new IncorrectWeaponTypeException(gunClass, weaponName);
+            }
+        } catch (NoSuchFieldException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    protected void checkSecondaryWeaponAnnotation(@SecondaryWeapon WeaponSecondary weaponName, Class<? extends Annotation> weaponClass, String gunClass) {
+        try {
+            if (!weaponName.getClass().getField(weaponName.name()).isAnnotationPresent(weaponClass)) {
+                throw new IncorrectWeaponTypeException(gunClass, weaponName);
+            }
+        } catch (NoSuchFieldException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
 }

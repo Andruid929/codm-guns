@@ -7,10 +7,7 @@ import net.druidlabs.weapons.WeaponCategory;
 import net.druidlabs.weapons.WeaponPrimary;
 import net.druidlabs.weapons.annotations.*;
 
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * This utility class provides all the primary weapons available to use in Call of Duty:Mobile.
@@ -29,15 +26,20 @@ import java.util.TreeMap;
  *
  * @author Andrew Jones
  * @see SecondaryWeapons
- * @since 23
+ * @since 1.0
+ * @version 1.0
  */
 
 public final class PrimaryWeapons {
 
-    private static final Map<String, Weapon> PRIMARY_WEAPONS = new TreeMap<>();
+    private static final Map<String, Weapon> PRIMARY_WEAPONS = new LinkedHashMap<>();
 
     private PrimaryWeapons() {
     }
+
+    /**
+     * Populate the weapons Map with the weapons.
+     * */
 
     private static void addWeapons() throws NoSuchFieldException {
         for (WeaponPrimary weapon : WeaponPrimary.values()) {
@@ -72,6 +74,7 @@ public final class PrimaryWeapons {
      * Returns a {@code Set<Weapon>} of all the primary weapons.
      *
      * @see #get(String)
+     * @since 1.0
      */
 
     public static Set<Weapon> getAll() {
@@ -81,7 +84,7 @@ public final class PrimaryWeapons {
             throw new RuntimeException(e);
         }
 
-        return new LinkedHashSet<>(PRIMARY_WEAPONS.values());
+        return Set.copyOf(PRIMARY_WEAPONS.values());
     }
 
     /**
@@ -92,6 +95,7 @@ public final class PrimaryWeapons {
      *
      * @param gunName The name of the gun in-game
      * @see #getAll()
+     * @since 1.0
      */
 
     public static Weapon get(String gunName) {
@@ -106,6 +110,8 @@ public final class PrimaryWeapons {
 
     /**
      * Returns a {@code Set<Weapon>} of all the primary weapons in the Assault rifle category.
+     *
+     * @since 1.0
      */
 
     public static Set<Weapon> getAssaultRifles() {
@@ -114,6 +120,8 @@ public final class PrimaryWeapons {
 
     /**
      * Returns a {@code Set<Weapon>} of all the primary weapons in the Sniper category.
+     *
+     * @since 1.0
      */
 
     public static Set<Weapon> getSnipers() {
@@ -122,6 +130,8 @@ public final class PrimaryWeapons {
 
     /**
      * Returns a {@code Set<Weapon>} of all the primary weapons in the Sub-machine gun category.
+     *
+     * @since 1.0
      */
 
     public static Set<Weapon> getSubMachineGuns() {
@@ -130,6 +140,8 @@ public final class PrimaryWeapons {
 
     /**
      * Returns a {@code Set<Weapon>} of all the primary weapons in the Light-machine gun category.
+     *
+     * @since 1.0
      */
 
     public static Set<Weapon> getLightMachineGuns() {
@@ -138,6 +150,8 @@ public final class PrimaryWeapons {
 
     /**
      * Returns a {@code Set<Weapon>} of all the primary weapons in the Shotgun category.
+     *
+     * @since 1.0
      */
 
     public static Set<Weapon> getShotguns() {
@@ -146,6 +160,8 @@ public final class PrimaryWeapons {
 
     /**
      * Returns a {@code Set<Weapon>} of all the primary weapons in the Marksman category.
+     *
+     * @since 1.0
      */
 
     public static Set<Weapon> getMarksmanRifles() {
