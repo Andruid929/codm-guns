@@ -13,7 +13,7 @@ import net.druidlabs.weapons.annotations.SMG;
  * @author Andrew Jones
  * */
 
-public class SubMachineGun extends Weapon {
+public final class SubMachineGun extends Weapon {
 
     private final String gunClass = "Sub-machine gun";
 

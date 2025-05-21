@@ -13,7 +13,7 @@ import net.druidlabs.weapons.annotations.Snipes;
  * @author Andrew Jones
  * */
 
-public class Sniper extends Weapon {
+public final class Sniper extends Weapon {
 
     private final String gunClass = "Sniper";
 

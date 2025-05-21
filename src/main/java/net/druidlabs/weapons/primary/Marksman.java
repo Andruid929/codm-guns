@@ -13,7 +13,7 @@ import net.druidlabs.weapons.annotations.Marksmen;
  * @author Andrew Jones
  * */
 
-public class Marksman extends Weapon {
+public final class Marksman extends Weapon {
 
     private final String gunClass = "Marksman";
 

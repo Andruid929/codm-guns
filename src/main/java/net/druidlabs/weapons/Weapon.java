@@ -11,11 +11,12 @@ import net.druidlabs.weapons.secondary.SecondaryWeapon;
 import java.lang.annotation.Annotation;
 
 /**
- * Class that provides access to the information of each weapon in Call of Duty:Mobile.
- * <p>
- * Cannot be instantiated, instead use the different weapon categories available to create objects.
+ * Abstract class that provides access to the information of each weapon in Call of Duty Mobile.
+ *
+ * <p>This is the parent class to all the weapon classes.
  *
  * @author Andrew Jones
+ * @version 1.0
  * @see AssaultRifle
  * @see SubMachineGun
  * @see LightMachineGun
@@ -25,27 +26,88 @@ import java.lang.annotation.Annotation;
  * @see Pistol
  * @see Melee
  * @see Launcher
- * @since 23
+ * @since 1.0
  */
 
 public abstract class Weapon {
 
+    /**
+     * The name of the weapon.
+     *
+     * @since 1.0
+     * */
+
     protected final String name;
+
+    /**
+     * The mastery name of the weapon.
+     *
+     * @since 1.0
+     * */
+
     protected String masteryName;
 
+    /**
+     * The weapon's base damage.
+     *
+     * @since 1.0
+     * */
+
     protected final int damage;
+
+    /**
+     * The weapon's base accuracy.
+     *
+     * @since 1.0
+     * */
+
     protected final int accuracy;
+
+    /**
+     * The weapon's base fire rate.
+     *
+     * @since 1.0
+     * */
+
     protected final int fireRate;
+
+    /**
+     * The weapon's base range.
+     *
+     * @since 1.0
+     * */
+
     protected final int range;
+
+    /**
+     * The weapon's base control.
+     *
+     * @since 1.0
+     * */
+
     protected final int control;
+
+    /**
+     * The weapon's base mobility.
+     *
+     * @since 1.0
+     * */
+
     protected final int mobility;
+
+    /**
+     * The weapon's default firing mechanism.
+     *
+     * @since 1.0
+     * */
 
     protected final FireMechanism fireMechanism;
 
     /**
-     * Access information about the specified weapon
+     * Create a new weapon object taking in all the attributes of the argument.
      *
-     * @param weapon Either a {@link WeaponPrimary primary weapon} or a {@link WeaponSecondary secondary weapon}
+     * @param weapon either a {@link WeaponPrimary primary weapon} or a {@link WeaponSecondary secondary weapon}.
+     * @since 1.0
      */
 
     public Weapon(@PrimaryWeapon @SecondaryWeapon WeaponAttr weapon) {
@@ -74,7 +136,8 @@ public abstract class Weapon {
     }
 
     /**
-     * Get the actual name of the gun in-game
+     * @return the actual name of the gun in-game.
+     * @since 1.0
      */
 
     public String getName() {
@@ -98,6 +161,7 @@ public abstract class Weapon {
 
     /**
      * @return Weapon's default fire mode
+     * @since 1.0
      */
 
     public String getFireMechanism() {
@@ -106,6 +170,7 @@ public abstract class Weapon {
 
     /**
      * @return Weapon's default damage output or shotgun pellet damage
+     * @since 1.0
      */
 
     public String getDamage() {
@@ -114,6 +179,7 @@ public abstract class Weapon {
 
     /**
      * @return Weapon's default accuracy
+     * @since 1.0
      */
 
     public int getAccuracy() {
@@ -122,6 +188,7 @@ public abstract class Weapon {
 
     /**
      * @return Weapon's default fire rate
+     * @since 1.0
      */
 
     public int getFireRate() {
@@ -130,6 +197,7 @@ public abstract class Weapon {
 
     /**
      * @return Weapon's default range
+     * @since 1.0
      */
 
     public int getRange() {
@@ -138,6 +206,7 @@ public abstract class Weapon {
 
     /**
      * @return Weapon's default control
+     * @since 1.0
      */
 
     public int getControl() {
@@ -146,6 +215,7 @@ public abstract class Weapon {
 
     /**
      * @return Weapon's default mobility
+     * @since 1.0
      */
 
     public int getMobility() {
@@ -153,11 +223,12 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's name and defaults
+     * @return all this weapon's attributes
+     * @since 1.0
      */
 
     public String getInfo() {
-        return name
+        return getName()
                 + "\nDamage: " + getDamage()
                 + ", Accuracy: " + getAccuracy()
                 + ", Fire rate: " + getFireRate()
@@ -167,7 +238,23 @@ public abstract class Weapon {
                 + ", Fire mode: " + getFireMechanism() + "\n";
     }
 
+    /**
+     * @return this weapon's gun class.
+     *
+     * @since 2.0
+     * */
+
     public abstract String getGunClass();
+
+    /**
+     * Check if the weapon passed in matches the gun class.
+     *
+     * @param gunClass the actual gun class.
+     * @param weaponName a primary weapon.
+     * @param weaponClass the annotation to be checked.
+     * @throws IncorrectWeaponTypeException if the {@code weaponName} is not annotated with the correct {@code weaponClass}.
+     * @since 2.0
+     * */
 
     protected void checkPrimaryWeaponAnnotation(@PrimaryWeapon WeaponPrimary weaponName, Class<? extends Annotation> weaponClass, String gunClass) {
         try {
@@ -178,6 +265,16 @@ public abstract class Weapon {
             System.err.println(e.getMessage());
         }
     }
+
+    /**
+     * Check if the weapon passed in matches the gun class.
+     *
+     * @param gunClass the actual gun class.
+     * @param weaponName a secondary weapon.
+     * @param weaponClass the annotation to be checked.
+     * @throws IncorrectWeaponTypeException if the {@code weaponName} is not annotated with the correct {@code weaponClass}.
+     * @since 2.0
+     * */
 
     protected void checkSecondaryWeaponAnnotation(@SecondaryWeapon WeaponSecondary weaponName, Class<? extends Annotation> weaponClass, String gunClass) {
         try {

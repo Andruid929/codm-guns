@@ -1,25 +1,45 @@
 package net.druidlabs.weapons;
 
+import net.druidlabs.weapons.annotations.AR;
+
+/**
+ * Thrown when the argument of a {@link Weapon} constructor does not
+ * match the type of weapon the object.
+ * <p>
+ * For example {@code new Sniper(WeaponPrimary.AK117)} will throw this exception as
+ * {@code WeaponPrimary.AK117} is annotated with {@link AR} meaning it can only
+ * be used as an argument of {@code AssaultRifle}.
+ *
+ * @author Andrew Jones
+ * @since 1.0
+ * @version 1.0
+ * */
+
 public class IncorrectWeaponTypeException extends RuntimeException {
 
-    private String gunClass;
-    private WeaponAttr weaponAttr;
+    /**
+     * The weapon class of the incorrect weapon type.
+     *
+     * @since 1.0
+     * */
 
-    public IncorrectWeaponTypeException() {
-        super();
-    }
+    private final String gunClass;
 
-    public IncorrectWeaponTypeException(String message) {
-        super(message);
-    }
+    /**
+     * The weapon object.
+     *
+     * @since 1.0
+     * */
+    private final WeaponAttr weaponAttr;
 
-    public IncorrectWeaponTypeException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public IncorrectWeaponTypeException(Throwable cause) {
-        super(cause);
-    }
+    /**
+     * Throw a new exception with the stacktrace showing which weapon
+     * was passed as the wrong weapon class.
+     *
+     * @param gunClass the class of the expected weapon.
+     * @param weaponAttr the actual weapon object passed in.
+     * @since 1.0
+     * */
 
     public IncorrectWeaponTypeException(String gunClass, WeaponAttr weaponAttr) {
         this.gunClass = gunClass;

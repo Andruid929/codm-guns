@@ -13,7 +13,7 @@ import net.druidlabs.weapons.annotations.Shotty;
  * @author Andrew Jones
  * */
 
-public class Shotgun extends Weapon {
+public final class Shotgun extends Weapon {
 
     private final WeaponPrimary weapon;
 

@@ -14,7 +14,7 @@ import net.druidlabs.weapons.mastery.NoMasterySystemException;
  * @author Andrew Jones
  * */
 
-public class Pistol extends Weapon {
+public final class Pistol extends Weapon {
 
     private final WeaponSecondary weapon;
     private final String gunClass = "Pistol";

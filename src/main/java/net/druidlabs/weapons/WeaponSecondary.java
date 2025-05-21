@@ -7,13 +7,20 @@ import net.druidlabs.weapons.secondary.SecondaryWeapon;
 
 import static net.druidlabs.weapons.FireMechanism.*;
 
+/**
+ * All secondary weapons and their attributes.
+ *
+ * @since 1.0
+ * @version 1.0
+ * @author Andrww Jones
+ * @see WeaponPrimary
+ * */
+
 @SecondaryWeapon
 public enum WeaponSecondary implements WeaponAttr {
 
-    /*
-     * Pistols
-     * WeaponSecondary type for the Pistol class
-     * */
+    //Pistols
+
     @Pistola
     J358("J358", 82, 35, 78, 87, 57, 77, SEMI_AUTO),
     @Pistola
@@ -34,10 +41,8 @@ public enum WeaponSecondary implements WeaponAttr {
     @Pistola
     MACHINE_PISTOL("Machine pistol", 22, 89, 43, 114, 39, 47, FULL_AUTO),
 
-    /*
-     * Melee
-     * WeaponSecondary type for the Melee class
-     * */
+    //Melee
+
     @Meleeee
     KNIFE("Knife", 200, 40, 70, 90, 10, 70),
     @Meleeee
@@ -71,10 +76,8 @@ public enum WeaponSecondary implements WeaponAttr {
     @Meleeee
     SPEAR("Spear", 200, 40, 70, 90, 10, 70),
 
-    /*
-     * Launchers
-     * WeaponSecondary type for the Launcher class
-     * */
+    //Launchers
+
     @Launchy
     FHJ_18("FHJ-18", 300, 40, 90, 40, 90, 20),
     @Launchy

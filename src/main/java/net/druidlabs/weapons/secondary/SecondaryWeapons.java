@@ -8,7 +8,6 @@ import net.druidlabs.weapons.annotations.Meleeee;
 import net.druidlabs.weapons.annotations.Pistola;
 import net.druidlabs.weapons.primary.PrimaryWeapons;
 
-import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -27,7 +26,7 @@ import java.util.TreeMap;
  *
  * @author Andrew Jones
  * @see PrimaryWeapons
- * @since 23
+ * @since 1.0
  */
 
 public final class SecondaryWeapons {
@@ -54,9 +53,9 @@ public final class SecondaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the secondary weapons.
-     *
+     * @return all the secondary weapons.
      * @see #get(String)
+     * @since 1.0
      */
 
     public static Set<Weapon> getAll() {
@@ -66,17 +65,19 @@ public final class SecondaryWeapons {
             System.err.println(e.getMessage());
         }
 
-        return new LinkedHashSet<>(SECONDARY_WEAPONS.values());
+        return Set.copyOf(SECONDARY_WEAPONS.values());
     }
 
     /**
-     * Returns the {@code Weapon} object of the weapon specified, make sure that the gun name you specify is exactly the gun's name in the game.
+     * Get the {@code Weapon} object of the weapon specified, make sure that the gun name you specify is exactly the gun's name in the game.
      * <p>
      * It's also case-sensitive so if you want to get {@code FHJ-18}, be sure to specify {@code "FHJ-18"}
      * hyphen and all.
      *
-     * @param gunName The name of the weapon in-game
+     * @param gunName The name of the weapon in-game.
+     * @return the weapon specified.
      * @see #getAll()
+     * @since 1.0
      */
 
     public static Weapon get(String gunName) {
@@ -90,7 +91,8 @@ public final class SecondaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the secondary weapons in the Pistol category.
+     * @return all the secondary weapons in the Pistol category.
+     * @since 1.0
      */
 
     public static Set<Weapon> getPistols() {
@@ -98,7 +100,8 @@ public final class SecondaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the secondary weapons in the Melee category.
+     * @return all the secondary weapons in the Melee category.
+     * @since 1.0
      */
 
     public static Set<Weapon> getMelee() {
@@ -106,7 +109,8 @@ public final class SecondaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the secondary weapons in the Launcher category.
+     * @return all the secondary weapons in the Launcher category.
+     * @since 1.0
      */
 
     public static Set<Weapon> getLaunchers() {

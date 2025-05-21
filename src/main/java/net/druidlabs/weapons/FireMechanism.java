@@ -1,5 +1,13 @@
 package net.druidlabs.weapons;
 
+/**
+ * This enum contains all the registered firing mechanisms in the game.
+ *
+ * @since 1.0
+ * @author Andrew Jones
+ * @version 1.0
+ * */
+
 public enum FireMechanism {
 
     FULL_AUTO("Full auto"),
@@ -16,6 +24,11 @@ public enum FireMechanism {
     FireMechanism(String mechanism) {
         this.mechanism = mechanism;
     }
+
+    /**
+     * @return this firing mechanism.
+     * @since 1.0
+     * */
 
     public String getMechanism(){
         return mechanism;

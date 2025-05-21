@@ -7,12 +7,20 @@ import static net.druidlabs.weapons.FireMechanism.*;
 import static net.druidlabs.weapons.FireMechanism.BURST;
 import static net.druidlabs.weapons.FireMechanism.FULL_AUTO;
 
+/**
+ * All primary weapons and their various attributes.
+ *
+ * @author Andrew Jones
+ * @version 1.0
+ * @see WeaponSecondary
+ * @since 1.0
+ */
+
 @PrimaryWeapon
 public enum WeaponPrimary implements WeaponAttr {
-    /*
-     * Assault rifles
-     * WeaponPrimary type for the AssaultRifle class
-     * */
+
+    //Assault rifles
+
     @AR
     TYPE_25("Type 25", 24, 85, 44, 83, 47, 46, FULL_AUTO),
     @AR
@@ -76,10 +84,8 @@ public enum WeaponPrimary implements WeaponAttr {
     @AR
     LAG_53("LAG 53", 45, 45, 54, 83, 53, 50, FULL_AUTO),
 
-    /*
-     * Sniper rifles
-     * WeaponPrimary type for the SniperRifle class
-     * */
+    //Sniper rifles
+
     @Snipes
     XPR_50("XPR-50", 80, 37, 73, 51, 90, 40, SEMI_AUTO),
     @Snipes
@@ -107,10 +113,8 @@ public enum WeaponPrimary implements WeaponAttr {
     @Snipes
     LW3_TUNDRA("LW3 Tundra", 91, 27, 68, 35, 48, 32, BOLT_ACTION),
 
-    /*
-     * Light-machine guns
-     * WeaponPrimary type for the LightMachineGun class
-     * */
+    //Light machine guns
+
     @LMG
     S36("S36", 30, 75, 45, 61, 51, 47, FULL_AUTO),
     @LMG
@@ -136,10 +140,8 @@ public enum WeaponPrimary implements WeaponAttr {
     @LMG
     RAAL_MG("Raal MG", 34, 57, 72, 32, 68, 65, FULL_AUTO),
 
-    /*
-     * Submachine guns
-     * WeaponPrimary type for the SubMachineGun class
-     * */
+    //Submachine guns
+
     @SMG
     RUS_79U("RUS-79U", 28, 76, 51, 98, 46, 50, FULL_AUTO),
     @SMG
@@ -195,10 +197,8 @@ public enum WeaponPrimary implements WeaponAttr {
     @SMG
     USS9("USS-9", 34, 60, 68, 99, 45, 69, FULL_AUTO),
 
-    /*
-     * Shotgun
-     * WeaponPrimary type for the Shotgun class
-     * */
+    //Shotguns
+
     @Shotty
     HS2126("HS2126", 16, 8, 48, 40, 71, 33, 38, BURST),
     @Shotty
@@ -218,10 +218,8 @@ public enum WeaponPrimary implements WeaponAttr {
     @Shotty
     ARGUS("Argus", 28, 8, 28, 60, 81, 38, 42, PUMP_ACTION),
 
-    /*
-     * Marksman rifles
-     * WeaponPrimary type for the Marksman class
-     * */
+    //Marksman rifles
+
     @Marksmen
     KILO_BOLT_ACTION("Kilo Bolt-Action", 85, 28, 59, 40, 90, 34, BOLT_ACTION),
     @Marksmen

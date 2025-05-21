@@ -1,13 +1,15 @@
 package net.druidlabs.weapons.primary;
 
 
-import net.druidlabs.weapons.secondary.SecondaryWeapons;
 import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponCategory;
 import net.druidlabs.weapons.WeaponPrimary;
 import net.druidlabs.weapons.annotations.*;
+import net.druidlabs.weapons.secondary.SecondaryWeapons;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * This utility class provides all the primary weapons available to use in Call of Duty:Mobile.
@@ -25,9 +27,9 @@ import java.util.*;
  * <p>  {@link #getLightMachineGuns()} returns all weapons in the LMG category
  *
  * @author Andrew Jones
+ * @version 1.0
  * @see SecondaryWeapons
  * @since 1.0
- * @version 1.0
  */
 
 public final class PrimaryWeapons {
@@ -36,10 +38,6 @@ public final class PrimaryWeapons {
 
     private PrimaryWeapons() {
     }
-
-    /**
-     * Populate the weapons Map with the weapons.
-     * */
 
     private static void addWeapons() throws NoSuchFieldException {
         for (WeaponPrimary weapon : WeaponPrimary.values()) {
@@ -71,8 +69,7 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the primary weapons.
-     *
+     * @return All primary weapons in the game.
      * @see #get(String)
      * @since 1.0
      */
@@ -88,12 +85,13 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns the {@code Weapon} object of the weapon specified, make sure that the gun name you specify is exactly the gun's name in the game.
+     * Get the {@code Weapon} object of the weapon specified, make sure that the gun name you specify is exactly the gun's name in the game.
      * <p>
      * It's also case-sensitive so if you want to get {@code KRM-262}, be sure to specify {@code "KRM-262"}
      * hyphen and all.
      *
-     * @param gunName The name of the gun in-game
+     * @param gunName The name of the gun in-game.
+     * @return the weapon specified.
      * @see #getAll()
      * @since 1.0
      */
@@ -109,8 +107,7 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the primary weapons in the Assault rifle category.
-     *
+     * @return all the primary weapons in the Assault rifle category.
      * @since 1.0
      */
 
@@ -119,8 +116,7 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the primary weapons in the Sniper category.
-     *
+     * @return all the primary weapons in the Sniper category.
      * @since 1.0
      */
 
@@ -129,8 +125,7 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the primary weapons in the Sub-machine gun category.
-     *
+     * @return all the primary weapons in the Sub-machine gun category.
      * @since 1.0
      */
 
@@ -139,8 +134,7 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the primary weapons in the Light-machine gun category.
-     *
+     * @return all the primary weapons in the Light-machine gun category.
      * @since 1.0
      */
 
@@ -149,8 +143,7 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the primary weapons in the Shotgun category.
-     *
+     * @return all the primary weapons in the Shotgun category.
      * @since 1.0
      */
 
@@ -159,8 +152,7 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Returns a {@code Set<Weapon>} of all the primary weapons in the Marksman category.
-     *
+     * @return all the primary weapons in the Marksman category.
      * @since 1.0
      */
 
