@@ -14,12 +14,9 @@ import java.util.TreeMap;
 
 /**
  * This utility class provides all the secondary weapons available to use in Call of Duty:Mobile.
- * <p>
- * Use the {@link #getAll()} method to get all secondary weapons regardless of the category
- * <p>
- * If you would like to get weapons in a specific category, you can use the method that returns
+ * <p>Use the {@link #getAll()} method to get all secondary weapons regardless of the category
+ * <p>If you would like to get weapons in a specific category, you can use the method that returns
  * your desired category:
- * <p>
  * <p>  {@link #getPistols()} returns all weapons in the Pistol category
  * <p>  {@link #getMelee()} returns all weapons in the Melee category
  * <p>  {@link #getLaunchers()} returns all weapons in the Launcher category

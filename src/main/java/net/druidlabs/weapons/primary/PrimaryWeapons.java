@@ -13,12 +13,9 @@ import java.util.Set;
 
 /**
  * This utility class provides all the primary weapons available to use in Call of Duty:Mobile.
- * <p>
- * Use the {@link #getAll()} method to get all primary weapons regardless of the gun category
- * <p>
- * If you would like to get guns in a specific gun category, you can use the method that returns
+ * <p>Use the {@link #getAll()} method to get all primary weapons regardless of the gun category
+ * <p>If you would like to get guns in a specific gun category, you can use the method that returns
  * your desired gun category:
- * <p>
  * <p>  {@link #getAssaultRifles()} returns all weapons in the AR category
  * <p>  {@link #getSubMachineGuns()} returns all weapons in the SMG category
  * <p>  {@link #getShotguns()} returns all weapons in the Shotgun category

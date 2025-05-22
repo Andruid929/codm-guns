@@ -15,6 +15,7 @@ import java.lang.annotation.Annotation;
  *
  * @author Andrew Jones
  * @version 1.0
+ * @see PrimaryGun
  * @see AssaultRifle
  * @see SubMachineGun
  * @see LightMachineGun
@@ -33,7 +34,7 @@ public abstract class Weapon {
      * The name of the weapon.
      *
      * @since 1.0
-     * */
+     */
 
     protected final String name;
 
@@ -41,7 +42,7 @@ public abstract class Weapon {
      * The weapon's base damage.
      *
      * @since 1.0
-     * */
+     */
 
     protected final int damage;
 
@@ -49,7 +50,7 @@ public abstract class Weapon {
      * The weapon's base accuracy.
      *
      * @since 1.0
-     * */
+     */
 
     protected final int accuracy;
 
@@ -57,7 +58,7 @@ public abstract class Weapon {
      * The weapon's base fire rate.
      *
      * @since 1.0
-     * */
+     */
 
     protected final int fireRate;
 
@@ -65,7 +66,7 @@ public abstract class Weapon {
      * The weapon's base range.
      *
      * @since 1.0
-     * */
+     */
 
     protected final int range;
 
@@ -73,7 +74,7 @@ public abstract class Weapon {
      * The weapon's base control.
      *
      * @since 1.0
-     * */
+     */
 
     protected final int control;
 
@@ -81,7 +82,7 @@ public abstract class Weapon {
      * The weapon's base mobility.
      *
      * @since 1.0
-     * */
+     */
 
     protected final int mobility;
 
@@ -89,12 +90,14 @@ public abstract class Weapon {
      * The weapon's default firing mechanism.
      *
      * @since 1.0
-     * */
+     */
 
     protected final FireMechanism fireMechanism;
 
     /**
      * Create a new weapon object taking in all the attributes of the argument.
+     * <p>If you want a primary weapon object, use {@link PrimaryGun} for the declaration
+     * because that object will support the mastery system.
      *
      * @param weapon either a {@link WeaponPrimary primary weapon} or a {@link WeaponSecondary secondary weapon}.
      * @since 1.0
@@ -112,6 +115,8 @@ public abstract class Weapon {
     }
 
     /**
+     * The name of the weapon as defined in {@code WeaponPrimary}.
+     *
      * @return the actual name of the gun in-game.
      * @since 1.0
      */
@@ -121,7 +126,9 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's default fire mode
+     * This is how the bullets are fired.
+     *
+     * @return weapon's default fire mode.
      * @since 1.0
      */
 
@@ -130,7 +137,9 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's default damage output or shotgun pellet damage
+     * This returns how much damage each bullet does without body part multipliers.
+     *
+     * @return weapon's default damage output or shotgun pellet damage.
      * @since 1.0
      */
 
@@ -139,7 +148,9 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's default accuracy
+     * This is a measure of a gun's bullet spread accuracy.
+     *
+     * @return weapon's default accuracy.
      * @since 1.0
      */
 
@@ -148,7 +159,9 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's default fire rate
+     * This is a measure of how fast bullets are ejected from the barrel.
+     *
+     * @return weapon's default fire rate.
      * @since 1.0
      */
 
@@ -157,7 +170,9 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's default range
+     * This is how far out a bullet can maintain its damage.
+     *
+     * @return weapon's default range.
      * @since 1.0
      */
 
@@ -166,7 +181,9 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's default control
+     * This is a measure of how much a weapon kicks.
+     *
+     * @return weapon's default control.
      * @since 1.0
      */
 
@@ -175,7 +192,9 @@ public abstract class Weapon {
     }
 
     /**
-     * @return Weapon's default mobility
+     * This is how slow or fast movement is while carrying this weapon.
+     *
+     * @return weapon's default mobility.
      * @since 1.0
      */
 
@@ -184,6 +203,8 @@ public abstract class Weapon {
     }
 
     /**
+     * All this weapon's attributes in one place
+     *
      * @return all this weapon's attributes
      * @since 1.0
      */
@@ -200,22 +221,23 @@ public abstract class Weapon {
     }
 
     /**
-     * @return this weapon's gun class.
+     * The classification of this weapon
      *
+     * @return this weapon's gun class.
      * @since 2.0
-     * */
+     */
 
     public abstract String getGunClass();
 
     /**
      * Check if the weapon passed in matches the gun class.
      *
-     * @param gunClass the actual gun class.
-     * @param weaponName a primary weapon.
+     * @param gunClass    the actual gun class.
+     * @param weaponName  a primary weapon.
      * @param weaponClass the annotation to be checked.
      * @throws IncorrectWeaponTypeException if the {@code weaponName} is not annotated with the correct {@code weaponClass}.
      * @since 2.0
-     * */
+     */
 
     protected void checkPrimaryWeaponAnnotation(@PrimaryWeapon WeaponPrimary weaponName, Class<? extends Annotation> weaponClass, String gunClass) {
         try {
@@ -230,12 +252,12 @@ public abstract class Weapon {
     /**
      * Check if the weapon passed in matches the gun class.
      *
-     * @param gunClass the actual gun class.
-     * @param weaponName a secondary weapon.
+     * @param gunClass    the actual gun class.
+     * @param weaponName  a secondary weapon.
      * @param weaponClass the annotation to be checked.
      * @throws IncorrectWeaponTypeException if the {@code weaponName} is not annotated with the correct {@code weaponClass}.
      * @since 2.0
-     * */
+     */
 
     protected void checkSecondaryWeaponAnnotation(@SecondaryWeapon WeaponSecondary weaponName, Class<? extends Annotation> weaponClass, String gunClass) {
         try {

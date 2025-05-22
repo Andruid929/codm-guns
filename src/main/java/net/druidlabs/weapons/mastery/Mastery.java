@@ -33,6 +33,7 @@ public interface Mastery {
     void setMasteryName(String masteryName);
 
     /**
+     * Get the custom name if any was set for this weapon.
      * @return the mastery name of the current weapon.
      * If a placeholder was used, this will return {@code "No name"}.
      * @throws NotMasteredException if no mastery name was set for this weapon beforehand.

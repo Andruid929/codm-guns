@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Collect all your mastered guns.
  * Secondary weapons don't have a mastery system.
- * <p> Default collection is powered by a {@link Set Set<PrimaryGun>}.
+ * <p> Default collection is powered by a {@link Set} of type {@link PrimaryGun}.
  *
  * @author Andrew Jones
  * @version 2.0
