@@ -1,19 +1,18 @@
 package net.druidlabs.weapons.primary;
 
 import net.druidlabs.weapons.IncorrectWeaponTypeException;
-import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponPrimary;
 import net.druidlabs.weapons.annotations.Shotty;
 
 /**
  * The class for a {@code Shotgun}.
  *
- * @since 1.0
- * @version 2.0
  * @author Andrew Jones
- * */
+ * @version 2.0
+ * @since 1.0
+ */
 
-public final class Shotgun extends Weapon {
+public final class Shotgun extends PrimaryGun {
 
     private final WeaponPrimary weapon;
 
@@ -25,7 +24,7 @@ public final class Shotgun extends Weapon {
      * @param weaponName the name of the shotgun. Must be a {@link WeaponPrimary} annotated with {@link Shotgun}.
      * @throws IncorrectWeaponTypeException if the weapon passed in is not an Assault Rifle.
      * @since 1.0
-     * */
+     */
 
     public Shotgun(@Shotty WeaponPrimary weaponName) {
         super(weaponName);

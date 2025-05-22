@@ -4,6 +4,8 @@ import net.druidlabs.weapons.IncorrectWeaponTypeException;
 import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponPrimary;
 import net.druidlabs.weapons.annotations.AR;
+import net.druidlabs.weapons.mastery.Mastery;
+import net.druidlabs.weapons.mastery.NotMasteredException;
 
 /**
  * The class for an {@code Assault rifle}.
@@ -13,7 +15,7 @@ import net.druidlabs.weapons.annotations.AR;
  * @author Andrew Jones
  * */
 
-public final class AssaultRifle extends Weapon {
+public final class AssaultRifle extends PrimaryGun {
 
     private final String gunClass = "Assault rifle";
 

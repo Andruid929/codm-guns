@@ -1,7 +1,5 @@
 package net.druidlabs.weapons;
 
-import net.druidlabs.weapons.mastery.MasteryCollection;
-import net.druidlabs.weapons.mastery.NoMasterySystemException;
 import net.druidlabs.weapons.primary.*;
 import net.druidlabs.weapons.secondary.Launcher;
 import net.druidlabs.weapons.secondary.Melee;
@@ -38,14 +36,6 @@ public abstract class Weapon {
      * */
 
     protected final String name;
-
-    /**
-     * The mastery name of the weapon.
-     *
-     * @since 1.0
-     * */
-
-    protected String masteryName;
 
     /**
      * The weapon's base damage.
@@ -122,41 +112,12 @@ public abstract class Weapon {
     }
 
     /**
-     * If you have accumulated 3,500 or more weapon XP, you have gained access
-     * to weapon rename aka mastery unless it's a secondary, of course.
-     * You can mark up that weapon here if you'd like
-     * <p>
-     *
-     * @param masteryName Your name for the weapon can be passed in here
-     * @see #getMasteryName()
-     */
-
-    public void setMasteryName(String masteryName) {
-        this.masteryName = masteryName;
-    }
-
-    /**
      * @return the actual name of the gun in-game.
      * @since 1.0
      */
 
     public String getName() {
         return name;
-    }
-
-    /**
-     * Have a unique name for your weapon? Set it up with {@link #setMasteryName(String)}
-     * <p>
-     *
-     * @return Mastery name if any.
-     * @throws NoMasterySystemException If you attempt to assign a mastery name to a secondary weapon
-     */
-
-    public String getMasteryName() {
-        if (masteryName != null) {
-            return masteryName;
-        }
-        return MasteryCollection.NOT_MASTERED;
     }
 
     /**

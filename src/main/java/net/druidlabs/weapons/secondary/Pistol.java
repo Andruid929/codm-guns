@@ -4,15 +4,14 @@ import net.druidlabs.weapons.IncorrectWeaponTypeException;
 import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponSecondary;
 import net.druidlabs.weapons.annotations.Pistola;
-import net.druidlabs.weapons.mastery.NoMasterySystemException;
 
 /**
  * The class for a {@code Pistol}.
  *
- * @since 1.0
- * @version 2.0
  * @author Andrew Jones
- * */
+ * @version 2.0
+ * @since 1.0
+ */
 
 public final class Pistol extends Weapon {
 
@@ -25,23 +24,13 @@ public final class Pistol extends Weapon {
      * @param weapon the name of the pistol. Must be a {@link WeaponSecondary} annotated with {@link Pistola}.
      * @throws IncorrectWeaponTypeException if the weapon passed in is not a pistol.
      * @since 1.0
-     * */
+     */
 
     public Pistol(@Pistola WeaponSecondary weapon) {
         super(weapon);
         this.weapon = weapon;
 
         checkSecondaryWeaponAnnotation(weapon, Pistola.class, gunClass);
-    }
-
-    @Override
-    public void setMasteryName(String masteryName) {
-        throw new NoMasterySystemException();
-    }
-
-    @Override
-    public String getMasteryName() {
-        throw new NoMasterySystemException();
     }
 
     @Override

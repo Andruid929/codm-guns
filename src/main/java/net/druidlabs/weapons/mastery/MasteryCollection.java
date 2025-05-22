@@ -1,6 +1,6 @@
 package net.druidlabs.weapons.mastery;
 
-import net.druidlabs.weapons.Weapon;
+import net.druidlabs.weapons.primary.PrimaryGun;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Collect all your mastered guns.
  * Secondary weapons don't have a mastery system.
- * <p> Default collection is powered by a {@link Set Set<Weapon>}.
+ * <p> Default collection is powered by a {@link Set Set<PrimaryGun>}.
  *
  * @author Andrew Jones
  * @version 2.0
@@ -24,7 +24,7 @@ public class MasteryCollection {
      * <p>If a weapon's {@code getMasteryName()} returns this,
      * the weapon will not be allowed in a {@code MasteryCollection} object.
      * {@code DO NOT USE THIS FOR A MASTERY NAME}.
-     * <p>If the weapon is mastered but there's no custom name, use {@link #NOT_NAMED}.
+     * <p>If the weapon is mastered but there's no custom name, use {@code Mastery.NOT_NAMED}.
      *
      * @since 2.0
      */
@@ -37,16 +37,14 @@ public class MasteryCollection {
      * @since 2.0
      */
 
-    public static final String NOT_NAMED = "Not named";
-
-    private final Set<Weapon> WEAPON_COLLECTION;
+    private final Set<PrimaryGun> WEAPON_COLLECTION;
 
     /**
      * Get a simple instance of the MasteryCollection from scratch.
      * <p>
      * <p>
      * If you have an existing collection of weapons,
-     * you can use {@link #MasteryCollection(Collection)}  MasteryCollection(Collection<Weapon>)}.
+     * you can use {@link #MasteryCollection(Collection)}.
      *
      * @since 1.0
      */
@@ -60,14 +58,17 @@ public class MasteryCollection {
      * you can add them all into the collection.
      * <p>If not, use the {@link #MasteryCollection() no args constructor}
      *
-     * @param weaponCollection any {@link Collection} of type {@link Weapon}.
+     * @param weaponCollection any {@link Collection} of type {@link PrimaryGun}.
      * @throws NotMasteredException if any weapon in the given collection is not mastered.
      * @since 1.0
      */
-    public MasteryCollection(Collection<Weapon> weaponCollection) {
+    public MasteryCollection(Collection<PrimaryGun> weaponCollection) {
         WEAPON_COLLECTION = new HashSet<>();
-        Weapon[] weapons = new Weapon[weaponCollection.size()];
+
+        PrimaryGun[] weapons = new PrimaryGun[weaponCollection.size()];
+
         checkForMasteryNames(weaponCollection.toArray(weapons));
+
         WEAPON_COLLECTION.addAll(weaponCollection);
     }
 
@@ -81,7 +82,7 @@ public class MasteryCollection {
      * @since 1.0
      */
 
-    public MasteryCollection addGun(Weapon weapon, String masteryName) {
+    public MasteryCollection addGun(PrimaryGun weapon, String masteryName) {
         weapon.setMasteryName(masteryName);
         checkForMasteryNames(weapon);
 
@@ -99,7 +100,7 @@ public class MasteryCollection {
      * @since 1.0
      */
 
-    public MasteryCollection addGun(Weapon weapon) {
+    public MasteryCollection addGun(PrimaryGun weapon) {
         checkForMasteryNames(weapon);
 
         WEAPON_COLLECTION.add(weapon);
@@ -118,11 +119,11 @@ public class MasteryCollection {
     /**
      * Get all the registered masteries in this collection.
      *
-     * @return all the weapons added to the collection if any.
+     * @return all the weapons added to the collection, if any.
      * @throws NullPointerException if the collection is empty.
      * @since 1.0
      */
-    public Set<Weapon> getWeaponCollection() {
+    public Set<PrimaryGun> getWeaponCollection() {
         if (WEAPON_COLLECTION.isEmpty()) {
             throw new NullPointerException("Weapon collection is empty");
         }
@@ -137,7 +138,7 @@ public class MasteryCollection {
      * @throws NullPointerException if the collection is empty.
      */
     public Set<String> getMasteryNames() {
-        return getWeaponCollection().stream().map(Weapon::getMasteryName).collect(Collectors.toSet());
+        return getWeaponCollection().stream().map(PrimaryGun::getMasteryName).collect(Collectors.toSet());
     }
 
     /**
@@ -150,8 +151,8 @@ public class MasteryCollection {
      * @since 2.0
      */
 
-    private void checkForMasteryNames(Weapon... weapons) {
-        for (Weapon weapon : weapons) {
+    private void checkForMasteryNames(PrimaryGun... weapons) {
+        for (PrimaryGun weapon : weapons) {
             String masteryName = weapon.getMasteryName();
             if (masteryName.equals(NOT_MASTERED) || masteryName.isBlank()) {
                 throw new NotMasteredException(weapon);

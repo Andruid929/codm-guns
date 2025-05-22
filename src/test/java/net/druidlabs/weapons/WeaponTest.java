@@ -1,15 +1,12 @@
 package net.druidlabs.weapons;
 
-import net.druidlabs.weapons.primary.AssaultRifle;
-import net.druidlabs.weapons.primary.Shotgun;
-import net.druidlabs.weapons.primary.Sniper;
-import net.druidlabs.weapons.primary.SubMachineGun;
+import net.druidlabs.weapons.primary.*;
 import net.druidlabs.weapons.secondary.Launcher;
 import net.druidlabs.weapons.secondary.Melee;
 import net.druidlabs.weapons.secondary.Pistol;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WeaponTest {
 
@@ -20,7 +17,7 @@ class WeaponTest {
 
     @Test
     void getMasteryName() {
-        Weapon weapon = new Sniper(WeaponPrimary.DL_Q33);
+        PrimaryGun weapon = new Sniper(WeaponPrimary.DL_Q33);
         weapon.setMasteryName("Death kiss");
 
         assertEquals("Death kiss", weapon.getMasteryName());

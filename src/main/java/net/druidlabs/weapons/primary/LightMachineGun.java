@@ -1,19 +1,18 @@
 package net.druidlabs.weapons.primary;
 
 import net.druidlabs.weapons.IncorrectWeaponTypeException;
-import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponPrimary;
 import net.druidlabs.weapons.annotations.LMG;
 
 /**
  * The class for a {@code Light Machine Gun}.
  *
- * @since 1.0
- * @version 2.0
  * @author Andrew Jones
- * */
+ * @version 2.0
+ * @since 1.0
+ */
 
-public final class LightMachineGun extends Weapon {
+public final class LightMachineGun extends PrimaryGun {
 
     private final String gunClass = "Light machine gun";
 
@@ -23,7 +22,7 @@ public final class LightMachineGun extends Weapon {
      * @param weaponName the name of the light machine gun. Must be a {@link WeaponPrimary} annotated with {@link LMG}.
      * @throws IncorrectWeaponTypeException if the weapon passed in is not an LMG.
      * @since 1.0
-     * */
+     */
 
     public LightMachineGun(@LMG WeaponPrimary weaponName) {
         super(weaponName);

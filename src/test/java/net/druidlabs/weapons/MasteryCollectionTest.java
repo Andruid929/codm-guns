@@ -7,7 +7,6 @@ import net.druidlabs.weapons.primary.SubMachineGun;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -4,7 +4,6 @@ import net.druidlabs.weapons.IncorrectWeaponTypeException;
 import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponSecondary;
 import net.druidlabs.weapons.annotations.Meleeee;
-import net.druidlabs.weapons.mastery.NoMasterySystemException;
 
 /**
  * The class for a {@code Melee weapon}.
@@ -30,16 +29,6 @@ public final class Melee extends Weapon {
         super(weapon);
 
         checkSecondaryWeaponAnnotation(weapon, Meleeee.class, gunClass);
-    }
-
-    @Override
-    public void setMasteryName(String masteryName) {
-        throw new NoMasterySystemException();
-    }
-
-    @Override
-    public String getMasteryName() {
-        throw new NoMasterySystemException();
     }
 
     @Override
