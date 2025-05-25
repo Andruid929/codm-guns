@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public interface WeaponCategory {
 
     /**
+     * Get all the weapons in a specific primary gun class.
      * @param weaponClass the desired weapon class to be got.
      * @return all primary weapons in the specific weapon class.
      * @since 1.0
@@ -28,6 +29,7 @@ public interface WeaponCategory {
     }
 
     /**
+     * Get all the weapons in a specific secondary weapon class.
      * @param weaponClass the desired weapon class to be got.
      * @return all secondary weapons in the specific weapon class.
      * @since 1.0

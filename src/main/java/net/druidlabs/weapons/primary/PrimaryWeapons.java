@@ -66,7 +66,8 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * @return All primary weapons in the game.
+     * Get all the primary weapons regardless of their weapon class.
+     * @return the weapons in a random order
      * @see #get(String)
      * @since 1.0
      */
@@ -82,9 +83,9 @@ public final class PrimaryWeapons {
     }
 
     /**
-     * Get the {@code Weapon} object of the weapon specified, make sure that the gun name you specify is exactly the gun's name in the game.
-     * <p>
-     * It's also case-sensitive so if you want to get {@code KRM-262}, be sure to specify {@code "KRM-262"}
+     * Get the {@code Weapon} object of the weapon specified,
+     * make sure that the gun name you specify is exactly the gun's name in the game.
+     * <p>It's also case-sensitive so if you want to get {@code KRM-262}, be sure to specify {@code "KRM-262"}
      * hyphen and all.
      *
      * @param gunName The name of the gun in-game.
@@ -104,6 +105,7 @@ public final class PrimaryWeapons {
     }
 
     /**
+     * Get the ARs.
      * @return all the primary weapons in the Assault rifle category.
      * @since 1.0
      */
@@ -113,6 +115,7 @@ public final class PrimaryWeapons {
     }
 
     /**
+     * Get the snipers.
      * @return all the primary weapons in the Sniper category.
      * @since 1.0
      */
@@ -122,6 +125,7 @@ public final class PrimaryWeapons {
     }
 
     /**
+     * Get the SMGs.
      * @return all the primary weapons in the Sub-machine gun category.
      * @since 1.0
      */
@@ -131,6 +135,7 @@ public final class PrimaryWeapons {
     }
 
     /**
+     * Get the LMGs
      * @return all the primary weapons in the Light-machine gun category.
      * @since 1.0
      */
@@ -140,6 +145,7 @@ public final class PrimaryWeapons {
     }
 
     /**
+     * Get the shotguns
      * @return all the primary weapons in the Shotgun category.
      * @since 1.0
      */
@@ -149,6 +155,7 @@ public final class PrimaryWeapons {
     }
 
     /**
+     * Get the marksman rifles.
      * @return all the primary weapons in the Marksman category.
      * @since 1.0
      */

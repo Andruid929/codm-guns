@@ -11,10 +11,6 @@ package net.druidlabs.weapons.mastery;
 
 public class NoMasterySystemException extends UnsupportedOperationException {
 
-    public NoMasterySystemException() {
-        super();
-    }
-
     @Override
     public String getMessage() {
         return "Secondaries don't have a mastery system... yet";

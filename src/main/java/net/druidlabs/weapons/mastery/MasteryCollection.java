@@ -41,9 +41,7 @@ public class MasteryCollection {
 
     /**
      * Get a simple instance of the MasteryCollection from scratch.
-     * <p>
-     * <p>
-     * If you have an existing collection of weapons,
+     * <p>If you have an existing collection of weapons,
      * you can use {@link #MasteryCollection(Collection)}.
      *
      * @since 1.0

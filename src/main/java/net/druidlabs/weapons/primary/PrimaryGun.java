@@ -2,6 +2,7 @@ package net.druidlabs.weapons.primary;
 
 import net.druidlabs.weapons.Weapon;
 import net.druidlabs.weapons.WeaponAttr;
+import net.druidlabs.weapons.WeaponPrimary;
 import net.druidlabs.weapons.mastery.Mastery;
 import net.druidlabs.weapons.mastery.NotMasteredException;
 
@@ -40,7 +41,14 @@ public abstract class PrimaryGun extends Weapon implements Mastery {
 
     private boolean isMastered;
 
-    public PrimaryGun(WeaponAttr weapon) {
+    /**
+     * New instance of this with specified weapon attributes.
+     *
+     * @param weapon the weapon whose attributes to be taken.
+     * @since 2.0
+     * */
+
+    public PrimaryGun(WeaponPrimary weapon) {
         super(weapon);
         isMastered = false;
     }

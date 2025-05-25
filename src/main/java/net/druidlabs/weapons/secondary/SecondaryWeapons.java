@@ -50,7 +50,8 @@ public final class SecondaryWeapons {
     }
 
     /**
-     * @return all the secondary weapons.
+     * Get all secondary weapons.
+     * @return all the secondary weapon in a random order.
      * @see #get(String)
      * @since 1.0
      */
@@ -67,8 +68,7 @@ public final class SecondaryWeapons {
 
     /**
      * Get the {@code Weapon} object of the weapon specified, make sure that the gun name you specify is exactly the gun's name in the game.
-     * <p>
-     * It's also case-sensitive so if you want to get {@code FHJ-18}, be sure to specify {@code "FHJ-18"}
+     * <p>It's also case-sensitive so if you want to get {@code FHJ-18}, be sure to specify {@code "FHJ-18"}
      * hyphen and all.
      *
      * @param gunName The name of the weapon in-game.
@@ -88,6 +88,7 @@ public final class SecondaryWeapons {
     }
 
     /**
+     * Get all pistols.
      * @return all the secondary weapons in the Pistol category.
      * @since 1.0
      */
@@ -97,6 +98,7 @@ public final class SecondaryWeapons {
     }
 
     /**
+     * Get all melee weapons.
      * @return all the secondary weapons in the Melee category.
      * @since 1.0
      */
@@ -106,6 +108,7 @@ public final class SecondaryWeapons {
     }
 
     /**
+     * Get all launchers.
      * @return all the secondary weapons in the Launcher category.
      * @since 1.0
      */

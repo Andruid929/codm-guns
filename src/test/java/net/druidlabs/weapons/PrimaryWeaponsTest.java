@@ -3,6 +3,8 @@ package net.druidlabs.weapons;
 import net.druidlabs.weapons.primary.*;
 import org.junit.jupiter.api.Test;
 
+import javax.xml.stream.events.Comment;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PrimaryWeaponsTest {

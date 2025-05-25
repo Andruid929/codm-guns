@@ -14,6 +14,7 @@ public class NotMasteredException extends NullPointerException {
     private final Weapon weapon;
 
     /**
+     * Throw this exception specifying which weapon is not mastered.
      * @param weapon the weapon that is not mastered.
      * */
 
